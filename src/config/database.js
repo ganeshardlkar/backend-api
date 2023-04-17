@@ -1,5 +1,10 @@
+import * as dotenv from "dotenv";
 import mongoose from "mongoose";
 
+dotenv.config();
+
+const MONGOURL = process.env.MONGOURL;
+
 export const connect = async () => {
-    await mongoose.connect("mongodb://0.0.0.0/new_project");
+    await mongoose.connect(MONGOURL);
 }
